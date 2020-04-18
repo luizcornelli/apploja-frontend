@@ -26,10 +26,8 @@ export class CategoriasPage {
 
         this.itens = response; 
       }, 
-      erro => {
-        console.log(erro);
-      }); 
-    
+      erro => {}); 
+      
   }
 
 }
