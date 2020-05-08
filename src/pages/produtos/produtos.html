@@ -9,6 +9,11 @@
 
 <ion-content padding>
 
+  <!-- Default Refresher -->
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
   <ion-fab top right edge>
     <button navPush="CartPage" ion-fab mini> <ion-icon name="cart"></ion-icon> </button>
   </ion-fab>

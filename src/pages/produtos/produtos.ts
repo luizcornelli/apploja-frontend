@@ -21,6 +21,11 @@ export class ProdutosPage {
 
   ionViewDidLoad() {
 
+    this.loadData();     
+  }
+
+  loadData() {
+
     let categoria_id = this.navParams.get('categoria_id');
 
     let loader = this.presentLoading();
@@ -34,8 +39,7 @@ export class ProdutosPage {
       error => { 
         loader.dismiss(); 
       }); 
-  };
-
+  }
   loadImageUrls() {
     for(var i = 0; i < this.itens.length; i++){
       let item = this.itens[i]
@@ -61,5 +65,15 @@ export class ProdutosPage {
 
     loader.present();
     return loader;
+  }
+
+  doRefresh(refresher) {
+
+    this.loadData();     
+
+    // Chamada assicrona, depois de 2 segundos a refresh que aparece na tela é finalizado 
+    setTimeout(() => {
+      refresher.complete() ;
+    }, 1000);
   }
 }
