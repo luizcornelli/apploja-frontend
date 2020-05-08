@@ -10,7 +10,7 @@
 <ion-content padding>
 
   <!-- Default Refresher -->
-    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher  (ionRefresh)="doRefresh($event)">
       <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
@@ -27,4 +27,9 @@
       <p>{{item.preco | currency}}</p>
     </button>
   </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>
